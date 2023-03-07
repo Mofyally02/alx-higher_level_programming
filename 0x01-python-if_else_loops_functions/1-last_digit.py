@@ -1,16 +1,13 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-s_last = str(number)
-last = int(s_last[-1])
-# turn number negative
+digit = abs(number) % 10
 if number < 0:
-    last *= -1
+    digit = -digit
+print("Last digit of {} is {} and is ".format(number, digit), end="")
+if digit > 5:
+    print("greater than 5")
+elif digit == 0:
+    print("0")
 else:
-    pass
-if last > 5:
-    print(f'Last digit of {number:d} is {last:d} and is greater than 5')
-if last == 0:
-    print(f'Last digit of {number:d} is {last:d} and is 0')
-if last < 6 and last != 0:
-    print(f'Last digit of {number:d} is {last:d} and is less than 6 and not 0')
+    print("less than 6 and not 0")
