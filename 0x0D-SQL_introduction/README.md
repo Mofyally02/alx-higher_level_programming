@@ -1,4 +1,4 @@
-This is an introduction to SQL- Project >>0x0D. SQL - Introduction
+This is an introduction to SQL- Project (0x0D. SQL - Introduction)
 
 General concepts 
 - What’s a database
