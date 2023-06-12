@@ -1,9 +1,22 @@
 #!/usr/bin/node
-if (process.argv.length <= 3) {
-    console.log(0);
+
+function secondLargest (arr) {
+    let largest = arr[0];
+    let second = 0;
+  
+    arr.forEach((item) => {
+      if (largest < item) {
+        second = largest;
+        largest = item;
+      } else if (second < item && item !== largest) {
+        second = item;
+      }
+    });
+    return (arr.length === 2 && second === 0) ? arr[1] : second;
+  }
+  
+  if (process.argv.length === 2 || process.argv.length === 3) {
+    console.log('0');
   } else {
-    const args = process.argv.map(Number)
-      .slice(2, process.argv.length)
-      .sort((a, b) => a - b);
-    console.log(args[args.length - 2]);
+    console.log(secondLargest(process.argv.slice(2).map(Number)));
   }
